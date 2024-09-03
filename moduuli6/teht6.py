@@ -1,13 +1,14 @@
 import math
 
+
 def pizza(halkaisija, hinta):
     sade = halkaisija / 2
     pintaala = math.pi * sade ** 2
     yksikköhinta = pintaala / hinta
     return yksikköhinta
 
-def ohjelma():
 
+def ohjelma():
     halkaisija = float(input("Pizza 1 halkaisija senttimetreinä:"))
     halkaisija2 = float(input("Pizza 2 halkaisija senttimetreinä:"))
 
@@ -20,5 +21,6 @@ def ohjelma():
         print("Pizza 2 on parempi vastine rahalle.")
     elif yksikköhinta2 > yksikköhinta:
         print("Pizza 1 on parempi vastine rahalle.")
+
 
 ohjelma()

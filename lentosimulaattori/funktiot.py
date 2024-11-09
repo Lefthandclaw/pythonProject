@@ -374,13 +374,13 @@ def random_events(level):
 
 
 def get_location(name):
-    sql = """  select country.name, airport.name 
-                from country 
-                inner join airport 
-                on country.iso_country = airport.iso_country 
-                inner join game 
-                on game.location = airport.gps_code 
-                where game.screen_name = %s"""
+    sql = """  
+        SELECT airport.id, country.name, airport.name 
+        FROM country 
+        INNER JOIN airport ON country.iso_country = airport.iso_country 
+        INNER JOIN game ON game.location = airport.gps_code 
+        WHERE game.screen_name = %s
+    """
     cursor = yhteys.cursor()
     cursor.execute(sql, (name,))
     result = cursor.fetchone()

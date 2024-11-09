@@ -11,10 +11,10 @@ def level_one(name):
         if current_location is None:
             print("Virhe: Nykyistä sijaintia ei voitu hakea. Tarkista pelaajatietosi.")
             return
-
+        current_airport_id = current_location[0]
         print("Taso 1")
         country_code = input(
-            f"Olet tällä hetkellä sijainnissa {current_location[1]}. Minkä maan haluaisit tutkia seuraavaksi? Syötä maan koodi (esim. US, FI): ")
+            f"Olet tällä hetkellä sijainnissa {current_location[2]}. Minkä maan haluaisit tutkia seuraavaksi? Syötä maan koodi (esim. US, FI): ")
         airports = funktiot.get_airport_list(country_code)
         if len(airports) == 0:
             print("Yritä uudelleen!")
@@ -23,6 +23,9 @@ def level_one(name):
             print(f"{airport[0]}: {airport[1]}")
         while True:
             destination = input("Valmiina nousuun? Syötä määränpääsi lentokentän ID: ")
+            if destination == str(current_airport_id):  # Ensure we compare as strings
+                print("Et voi valita samaa lentokenttää, jossa olet. Yritä uudelleen!")
+                continue
             if funktiot.check_airport_availability(destination, country_code) == False:
                 print("Yritä uudelleen!")
                 continue
@@ -92,9 +95,10 @@ def level_two(name):
     points = funktiot.get_points(name)
     while True:
         current_location = funktiot.get_location(name)
+        current_airport_id = current_location[0]
         print(f"Taso 2, peli tulee vaikeutumaan! Sinulla on {points} pistettä.")
         country_code = input(
-            f"Olet tällä hetkellä sijainnissa {current_location[1]}. Minkä maan haluaisit tutkia seuraavaksi? Syötä maan koodi (esim. US, FI): ")
+            f"Olet tällä hetkellä sijainnissa {current_location[2]}. Minkä maan haluaisit tutkia seuraavaksi? Syötä maan koodi (esim. US, FI): ")
         airports = funktiot.get_airport_list(country_code)
         if len(airports) == 0:
             print("Yritä uudelleen!")
@@ -102,7 +106,11 @@ def level_two(name):
         for airport in airports:
             print(f"{airport[0]}: {airport[1]}")
         while True:
+
             destination = input("Valmiina nousuun? Syötä määränpääsi lentokentän ID: ")
+            if destination == str(current_airport_id):  # Ensure we compare as strings
+                print("Et voi valita samaa lentokenttää, jossa olet. Yritä uudelleen!")
+                continue
             if funktiot.check_airport_availability(destination, country_code) == False:
                 print("Yritä uudelleen!")
                 continue

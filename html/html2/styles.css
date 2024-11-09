@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: NSimSun, sans-serif;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+/* Set content to fill the entire A4 page */
+html,
+body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    body {
+        background-image: url("https://media.istockphoto.com/id/1160720443/vector/abstract-simple-geometric-vector-seamless-pattern-with-gold-line-texture-on-white-background.jpg?s=612x612&w=0&k=20&c=_kgBISj1Wio4LTRdBFN3IttmunACCl1-T5VKdurvb68=");
+        background-size: 75%;
+
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .site-header {
+        display: flex;
+        background-image: url("https://img.freepik.com/premium-vector/luxury-dark-green-gold-abstract-background_181182-12671.jpg");
+        background-size: 100%;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+    }
+
+    .site-logo {
+        background-color: white;
+        padding: 0rem 0.5rem;
+        border-radius: 0.25rem;
+    }
+
+    .site-navigation ul {
+        margin: auto;
+        display: flex;
+        font-size: 30px;
+        list-style: none;
+    }
+
+    .site-navigation ul li {
+        margin-left: 5rem;
+    }
+
+    .site-navigation ul li a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.7s;
+    }
+
+    .site-navigation ul li a:hover {
+        color: goldenrod;
+    }
+
+    .full-height {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 150px;
+    }
+
+    #home {
+        padding-top: 0;
+    }
+
+    #contact {
+        padding-top: 0;
+    }
+
+    .company-name {
+        margin: 0rem 0;
+        font-size: 50px;
+        background-color: white;
+
+    }
+
+    .products-heading {
+        margin: 1rem 0;
+        background-color: white;
+        font-size: 35px;
+    }
+
+    .content-box1 {
+        width: 65%;
+        height: 20rem;
+        background-color: white;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lorem-text {
+        max-width: 80%;
+        text-align: center;
+        margin: 2rem auto;
+        font-size: 20px;
+        background-color: white;
+    }
+
+    .products-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .product-box {
+        background-color: white;
+        width: 20%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: darkgoldenrod;
+    }
+
+    .contact-heading {
+        margin: 14rem 0;
+        background-color: white;
+        font-size: 50px;
+    }
+
+    .contact-container {
+        display: flex;
+        width: 60%;
+        height: 60%;
+        background-color: white;
+        color: darkgoldenrod;
+        font-size: 30px;
+    }
+
+    .contact-info {
+        width: 30%;
+        text-align: left;
+    }
+
+    .contact-info a {
+        color: darkgoldenrod;
+
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+
+    .map-image {
+        width: 60%;
+        align-content: baseline;
+    }
+
+    .map-image img {
+        width: 100%;
+    }

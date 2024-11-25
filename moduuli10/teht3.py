@@ -33,7 +33,7 @@ class talo:
 
     def palohälytys(self):
         for hissi in self.hissit:
-            hissi.siirrykerros(self.alempikerros)
+            hissi.siirrykerros(self.alempik   erros)
 
 talohissit = talo(1, 10, 3)
 
